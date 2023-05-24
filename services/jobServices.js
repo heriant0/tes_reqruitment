@@ -22,8 +22,14 @@ const JobServices = {
         }
     },
 
-    getJobListDetail: async() => {
-
+    getJobListDetail: async(id) => {
+        try {
+            const url =`http://dev3.dansmultipro.co.id/api/recruitment/positions/${id}`
+            const { data } = await axios.get(url);
+            return data;
+        } catch (e) {
+            throw new Error(e)
+        }
     },
 }
 

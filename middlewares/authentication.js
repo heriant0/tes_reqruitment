@@ -13,7 +13,6 @@ const authentication = async (req, res, next) => {
     }
 
     const UserData = decode(access_token)
-    console.log(UserData, 'user data')
     req.UserData = UserData;
 
     const user = await User.findOne({ where: { email: UserData.email } })
@@ -28,7 +27,6 @@ const authentication = async (req, res, next) => {
       }
     }
   } catch (error) {
-    console.log(error);
     next(error)
   }
 }

@@ -11,6 +11,6 @@ router.use(auhtentication)
 router.use(authorization)
 
 router.get('/joblist', JobController.jobList)
-router.get('/joblistdetails', JobController.jobListDetail)
+router.get('/joblistdetails/:id', JobController.jobListDetail)
 
 module.exports = router
