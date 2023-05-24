@@ -7,13 +7,13 @@ const JobController = {
             const result = await JobServices.getJobList(dataRequest)
             if (result.length > 0) {
                 return res.status(200).json({
-                    status: 200,
+                    statusCode: 200,
                     message: 'Successfully get data',
                     data: result
                 });
             } else {
                 return res.status(400).json({
-                    status: 400,
+                    statusCode: 400,
                     message: 'Get data failed',
                 });         
             }
@@ -29,13 +29,13 @@ const JobController = {
             const result = await JobServices.getJobListDetail(id)
             if (result) {
                 return res.status(200).json({
-                    status: 200,
+                    statusCode: 200,
                     message: 'Successfully get data',
                     data: result
                 });
             } else {
                 return res.status(400).json({
-                    status: 400,
+                    statusCode: 400,
                     message: 'Get data failed',
                 });         
             }

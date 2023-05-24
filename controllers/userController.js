@@ -14,7 +14,10 @@ const UserController = {
                 }
             } else {
                 const data = await UserService.register(firstName, lastName, email, password, role)
-                if (data) return res.status(201).json(data)
+                if (data) return res.status(201).json({
+                    statusCode: 201,
+                    message: 'User sucesfully register'
+                })
             }
         } catch (e) {
             next(e)
