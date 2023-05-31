@@ -7,7 +7,7 @@ const JobServices = {
             let description = (dataRequest.description) ? dataRequest.description : '';
             let location = (dataRequest.location) ? dataRequest.location : '';
             let full_time = (dataRequest.full_time == 'Y') ? true : false;
-            let page = (Number(dataRequest.page) > 0) ? Number(dataRequest.page) : 0;
+            let page = (Number(dataRequest.page) > 0) ? Number(dataRequest.page) : 1;
             let url;
             if (page > 0) {
                 url = (`${BASE_URL}?description=${description}&location=${location}&full_time=${full_time}&page=${page}`);
